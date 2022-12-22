@@ -6,5 +6,4 @@ class MainActivity : AppCompatActivity() {
     fun create() {
 
     }
-
 }
