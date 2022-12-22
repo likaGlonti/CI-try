@@ -1,0 +1,19 @@
+name: Daily run
+
+on:
+   schedule:
+    # * is a special character in YAML so you have to quote this string
+    - cron:  '35 4 * * 0,6'
+    - cron:  '35 4 * * *'
+    
+jobs:
+  test_schedule:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Not on Monday or Wednesday
+        if: github.event.schedule != '35 4 * * 0,6'
+        run: echo "This step will be skipped on Monday and Wednesday"
+      - name: Every time
+        run: echo "This step will always run"
+    
+    
