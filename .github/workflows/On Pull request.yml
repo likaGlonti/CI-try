@@ -1,7 +1,7 @@
 name: run tests
 on:
  pull_request:
-    types: [opened, reopened]
+    types: [opened, reopened, edited]
  push:
     branches:
       - 'main'
